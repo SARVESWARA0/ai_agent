@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="c.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.3/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <nav class="side-nav">
+            <div class="nav-header">
+                <h2>AI Chat</h2>
+            </div>
+            <button id="new-chat" class="new-chat-btn">New Chat</button>
+            <div class="model-selector">
+                <label for="model-select">Model:</label>
+                <select id="model-select">
+                    <option value="mixtral-8x7b-32768">Mixtral 8x7B</option>
+                    <option value="llama2-70b-4096">LLaMA2 70B</option>
+                </select>
+            </div>
+            <div id="conversation-history" class="conversation-history"></div>
+        </nav>
+        <main class="chat-area">
+            <div id="chat-messages" class="chat-messages"></div>
+            <div class="chat-input-container">
+                <textarea id="prompt" placeholder="Type your message here..."></textarea>
+                <button onclick="generateText()" class="send-btn">Send</button>
+            </div>
+        </main>
+    </div>
+    <script src="TextGenerator.js"></script>
+</body>
+</html>

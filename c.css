@@ -1,0 +1,223 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #50e3c2;
+  --background-color: #f5f7fa;
+  --text-color: #333333;
+  --user-message-bg: #e3f2fd;
+  --ai-message-bg: #e8f5e9;
+  --side-nav-bg: #2c3e50;
+  --side-nav-text: #ecf0f1;
+  --code-bg: #f0f0f0;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  height: 100%;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.side-nav {
+  width: 250px;
+  background-color: var(--side-nav-bg);
+  color: var(--side-nav-text);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-header h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.new-chat-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.new-chat-btn:hover {
+  background-color: #3a7bd5;
+}
+
+.model-selector {
+  margin-bottom: 20px;
+}
+
+.model-selector label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.model-selector select {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.conversation-history {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.chat-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.message {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.user-message {
+  background-color: var(--user-message-bg);
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.ai-message {
+  background-color: var(--ai-message-bg);
+  align-self: flex-start;
+}
+
+.message-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.message-content {
+  line-height: 1.5;
+}
+
+.message-content pre {
+  background-color: var(--code-bg);
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+
+.message-content code {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-left: 10px;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+.chat-input-container {
+  display: flex;
+  padding: 20px;
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+}
+
+.chat-input-container textarea {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: none;
+  height: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.send-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.send-btn:hover {
+  background-color: #3a7bd5;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .side-nav {
+    width: 100%;
+    height: auto;
+  }
+
+  .chat-area {
+    height: 70vh;
+  }
+}
+/* Add this to the end of your existing CSS file */
+
+.conversation-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.conversation-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.conversation-item.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
