@@ -112,7 +112,7 @@ async function generateText() {
         const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
             method: 'POST',
             headers: {
-                'Authorization': 'Bearer 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',
+                'Authorization': 'Bearer (your_api_key_of_groq)',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
